@@ -97,10 +97,8 @@
       </table>
   </body>
   <script>
-  var p1 = prompt("Player One: Enter Your Name, you will be Blue")
-  var p2 = prompt("Player Two: Enter Your Name, you will be Red")
 
-  $("h3").text(p1+": it is your turn, please pick a column to drop your blue chip.")
+  $("h3").text("Player1: it is your turn, please pick a column to drop your blue chip.")
 
   $("button").on("click",play)
 
@@ -130,12 +128,12 @@
     // for blue player1
     if (grayCounter%2 === 0) {
       $("table").find("tr").eq(rowIndex).find("td").eq(colIndex).find("button").css("background-color","rgb(20, 100, 232)")
-      $("h3").text(p2+": it is your turn, please pick a column to drop your red chip.")
+      $("h3").text("Player2: it is your turn, please pick a column to drop your red chip.")
     }
     // for red player2
     if (grayCounter%2 === 1) {
       $("table").find("tr").eq(rowIndex).find("td").eq(colIndex).find("button").css("background-color","rgb(224, 8, 30)")
-      $("h3").text(p1+": it is your turn, please pick a column to drop your red chip.")
+      $("h3").text("Player1: it is your turn, please pick a column to drop your red chip.")
     }
 
     // // find how many cells are blue and red
@@ -218,20 +216,20 @@
   function winnerCheck(x,i,j,how){
     // blue player1 wins
     if (x === "rgb(20, 100, 232)") {
-      console.log(p1+" has won "+how+" starting at row "+(i+1)+" col "+(j+1));
+      console.log("Player1 has won "+how+" starting at row "+(i+1)+" col "+(j+1));
       $("h3").fadeOut("fast");
       $("h2").fadeOut("fast");
-      $("h1").text(p1+" has won! Refresh your browser to play again!").css("fontSize", "50px")
+      $("h1").text("Player1 has won! Refresh your browser to play again!").css("fontSize", "50px")
       // off click event
       $("button").off("click",play)
     }
 
     // red player1 wins
     if (x === "rgb(224, 8, 30)") {
-      console.log(p2+" has won "+how+" starting at row "+(i+1)+" col "+(j+1));
+      console.log("Player2 has won "+how+" starting at row "+(i+1)+" col "+(j+1));
       $("h3").fadeOut("fast");
       $("h2").fadeOut("fast");
-      $("h1").text(p2+" has won! Refresh your browser to play again!").css("fontSize", "50px")
+      $("h1").text("Player2 has won! Refresh your browser to play again!").css("fontSize", "50px")
       // off click event
       $("button").off("click",play)
     }
