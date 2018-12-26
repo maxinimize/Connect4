@@ -1,5 +1,5 @@
-##Connect 4
+Connect 4 Game
 
- A Simple Front-End Project from https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/
- 
- Knowledge included: jQuery
+A Simple Front-End Project based on jQuery.
+
+Source: https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/
